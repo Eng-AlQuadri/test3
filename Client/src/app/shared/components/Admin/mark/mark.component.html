@@ -1,0 +1,15 @@
+<div class="dashboard">
+  <h1>Marks</h1>
+  <div class="card-holder animated fadeInDown">
+      <div class="card" id="addMark" (click)="showAddMarkDialog()">
+          <h3>Set Mark</h3>
+          <div class="info">
+              <div class="icon">
+                  <i class="fa-solid fa-plus"></i>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<app-create-mark (markCreated)="createMark($event)"></app-create-mark>

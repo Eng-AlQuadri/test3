@@ -1,0 +1,62 @@
+.dashboard .card-holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.dashboard h1 {
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.dashboard .card {
+  text-align: start;
+  border: 1.5px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--primary-color);
+  box-shadow: 15px 15px 30px rgba(1, 41, 112, 0.1);
+  transition: 0.3s;
+}
+
+.dashboard .card:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.dashboard .card:active {
+  scale: 0.9;
+}
+
+.dashboard .card:hover .info .icon {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+
+.dashboard .card .info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+}
+
+.dashboard .card .info .icon {
+  width: 40px;
+  height: 40px;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+}
+
+.dashboard .card .info h4 {
+  font-size: 30px;
+  margin: 8px 0 15px;
+}

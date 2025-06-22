@@ -1,0 +1,79 @@
+<div class="chat animated fadeInDown">
+  <div class="left-menu">
+    <div class="search-bar">
+        <input type="text" placeholder="Search" />
+        <button class="chat-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+    <ul class="names">
+      @for (contact of contacts; track $index) {
+        <li
+          (click)="onSelectContact(contact)"
+          id="{{contact.contactId}}"
+        >
+          <div class="field">
+            <div class="icon">
+                <img src="{{contact?.photoUrl ? contact.photoUrl : 'unknownPerson.png'}}" alt="img" />
+            </div>
+            <div class="texts">
+                <p class="chat-name">
+                  {{contact.userName}}
+                </p>
+                @if (contact.unreadMessages > 0) {
+                  <p class="status">
+                    <span class="sign">{{contact.unreadMessages}}</span>
+                  </p>
+                }
+            </div>
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+  @if (selectedContact) {
+    <div class="fadeInDown">
+      <div class="main-holder">
+        <div class="head">
+          <div class="field">
+            <div class="icon">
+                <img src="{{selectedContact.photoUrl ? selectedContact.photoUrl : 'unknownPerson.png'}}" alt="img" />
+            </div>
+            <div class="texts">
+              <p class="chat-name">
+                {{selectedContact.userName}}
+              </p>
+              <p class="status">
+                <span></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="body">
+
+
+            @for (message of messageService.messages(); track $index) {
+              <div class="{{message.senderId == currentUser?.id ? 'sender' : 'reciever'}}">
+                <p class="{{message.senderId == currentUser?.id ? 'sender-message' : 'reciever-message'}}">
+                  {{message.content}}
+                </p>
+              </div>
+            }
+
+        </div>
+        <div class="footer">
+          <form #messageForm="ngForm" (submit)="sendMessage()">
+            <input
+                type="text"
+                placeholder="Type Message"
+                [(ngModel)]="messageContent"
+                name="content"
+            />
+            <button>Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+

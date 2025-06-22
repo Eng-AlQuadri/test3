@@ -1,0 +1,103 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media(min-width: 768px) {
+  .container {
+      width: 750px;
+  }
+}
+
+@media(min-width: 992px) {
+  .container {
+      width: 970px;
+  }
+}
+
+@media(min-width: 1200px) {
+  .container {
+      width: 1170px;
+  }
+}
+
+/* End Global Rules */
+
+
+/* Start Variables */
+:root {
+  --primary-color: #990011ff;
+  --secondary-color: #fcf6f5ff;
+}
+
+/* End Variables */
+
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+}
+
+@keyframes fadeInDown {
+  0% {
+      opacity: 0;
+      transform: translateY(-30px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+button {
+  padding: 6px 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: 0.3s;
+  margin: 4px !important;
+}
+
+button:hover {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+button:active {
+  scale: 0.9;
+}
+
+.p-button-text.p-button-secondary {
+  display: none !important;
+}

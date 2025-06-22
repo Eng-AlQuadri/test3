@@ -1,0 +1,49 @@
+<form #editForm="ngForm">
+  <p-dialog header="Create Mark" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+    <span class="p-text-secondary block mb-8">Create Mark</span>
+    <div class="flex items-center gap-4 mb-4">
+        <label for="studentId" class="font-semibold w-24">Student ID</label>
+        <input
+          [(ngModel)]="mark!.studentId"
+          pInputText id="studentId"
+          class="flex-auto"
+          autocomplete="off"
+          name="studentId"
+          required
+          #studentId="ngModel"
+        />
+    </div>
+    <div *ngIf="studentId.dirty && studentId.invalid">
+      <small class="error-info" *ngIf="studentId.errors?.['required']">* Student ID is required</small>
+    </div>
+    <div class="flex items-center gap-4 mb-8">
+        <label for="gainedMark" class="font-semibold w-24">Gained Mark</label>
+        <input
+          [(ngModel)]="mark!.gainedMark"
+          pInputText id="email"
+          class="flex-auto"
+          autocomplete="off"
+          name="gainedMark"
+          type="number"
+          required
+          #gainedMark="ngModel"
+        />
+    </div>
+    <div *ngIf="gainedMark.dirty && gainedMark.invalid">
+      <small class="error-info" *ngIf="gainedMark.errors?.['required']">* Email is required</small>
+    </div>
+    <div class="selection">
+      <label>Subject:</label>
+      <select name='subject_id' id='subjectDropdown' required [(ngModel)]="mark!.subjectName">
+          <option value="">Select a subject</option>
+          @for (item of subjects; track $index) {
+            <option [value]="item">{{item}}</option>
+          }
+      </select>
+    </div>
+    <div class="flex justify-end gap-2">
+        <p-button label="Cancel" severity="secondary" (click)="closeDialog()" />
+        <p-button label="Save" [disabled]="editForm.invalid || !editForm.dirty" (click)="createMark()" />
+    </div>
+  </p-dialog>
+</form>

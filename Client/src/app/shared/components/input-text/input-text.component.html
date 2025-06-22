@@ -1,0 +1,17 @@
+<div class="field">
+  <label for="">{{label}}</label>
+  <input
+    [formControl]="control"
+    type={{type}}
+    name='email'
+  >
+</div>
+@if (control.dirty && control.hasError('required')) {
+  <small id="small-text">* {{label}} is required</small>
+}
+@if (control.dirty && control.hasError('email')) {
+  <small id="small-text">* Email is invalid</small>
+}
+@if (control.dirty && control.hasError('minlength')) {
+  <small id="small-text">* Min length is 4 characters</small>
+}

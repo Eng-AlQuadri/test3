@@ -1,0 +1,39 @@
+<div class="col-8">
+  <p-tabs value="0">
+    <p-tablist>
+      <p-tab value="0">My Info</p-tab>
+      <p-tab value="1">Photos</p-tab>
+    </p-tablist>
+    <p-tabpanels>
+      <p-tabpanel value="0">
+        <div class="doctors fadeInDown">
+          <div class="table">
+            <table class="animated fadeInDown">
+                <thead>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </thead>
+                <tbody class="tbody">
+                  <tr>
+                    <td>{{student?.id}}</td>
+                    <td>{{student?.userName}}</td>
+                    <td>{{student?.email}}</td>
+                    <td>
+                      <button type="button" (click)="showUpdateDialog(student!)">Edit</button>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+      </p-tabpanel>
+      <p-tabpanel value="1">
+        <app-photo-editor [student]="student"></app-photo-editor>
+      </p-tabpanel>
+    </p-tabpanels>
+  </p-tabs>
+</div>
+
+<app-update-student-dialog (studentUpdated)="updateStudent($event)"></app-update-student-dialog>

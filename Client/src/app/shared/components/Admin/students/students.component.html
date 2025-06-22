@@ -1,0 +1,67 @@
+<div class="doctors fadeInDown">
+  <div id='edit-message' class="edit-message-overlay">
+
+  </div>
+  <div class="doc-head">
+    <h2>Manage Students</h2>
+    <div class="head-group">
+      <div class="field">
+        <label for="">Search:</label>
+        <input
+          [(ngModel)]="studentParams.search"
+          type='text'
+          name='search'
+          (ngModelChange)="onSearchChange()"
+        >
+      </div>
+      <p-splitbutton label="Filters" [model]="items" severity="danger" />
+      <button class="add-user" (click)="showCreateDialog()">
+        Add New Student
+      </button>
+    </div>
+
+  </div>
+  <div class="table">
+      <table class="animated fadeInDown">
+          <thead>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Actions</th>
+          </thead>
+          <tbody class="tbody">
+            @if (students?.data?.length === 0) {
+              <tr>
+                <td colspan="4">No content</td>
+              </tr>
+            }
+            @for (student of students?.data; track $index) {
+              <tr>
+                <td>{{student.id}}</td>
+                <td>{{student.userName}}</td>
+                <td>{{student.email}}</td>
+                <td>
+                  <button type="button" (click)="showUpdateDialog(student)">Edit</button>
+                  <p-confirmPopup></p-confirmPopup>
+                  <button type="button" (click)="confirmDelete($event, student.id)">Delete</button>
+                </td>
+              </tr>
+            }
+          </tbody>
+      </table>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center" *ngIf="students">
+  <p-paginator
+    (onPageChange)="onPageChange($event)"
+    [first]="(studentParams.pageNumber - 1) * studentParams.pageSize"
+    [rows]="students.pageSize"
+    [totalRecords]="students.count"
+    [showPageLinks]="true"
+    [rowsPerPageOptions]="[5, 10, 20, 30]"
+  />
+</div>
+
+<app-create-student-dialog (studentCreated)="createStudent($event)" ></app-create-student-dialog>
+<app-update-student-dialog (studentUpdated)="updateStudent($event)"></app-update-student-dialog>

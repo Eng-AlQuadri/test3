@@ -1,0 +1,44 @@
+<form #editForm="ngForm">
+  <p-dialog header="Create Student" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+    <span class="p-text-secondary block mb-8">Create Student Data</span>
+    <div class="flex items-center gap-4 mb-4">
+        <label for="name" class="font-semibold w-24">Subject name</label>
+        <input
+          [(ngModel)]="subject!.name"
+          pInputText id="name"
+          class="flex-auto"
+          autocomplete="off"
+          name="name"
+          required
+          minlength="2"
+          maxlength="15"
+          #name="ngModel"
+        />
+    </div>
+    <div *ngIf="name.dirty && name.invalid">
+      <small class="error-info" *ngIf="name.errors?.['required']">* Subject name is required</small>
+      <small class="error-info" *ngIf="name.errors?.['minlength']">* Min length is 3 characters</small>
+      <small class="error-info" *ngIf="name.errors?.['maxlength']">* Max length is 15 characters</small>
+    </div>
+    <div class="flex items-center gap-4 mb-8">
+        <label for="minmark" class="font-semibold w-24">Min mark</label>
+        <input
+          [(ngModel)]="subject!.minMark"
+          pInputText id="minMark"
+          class="flex-auto"
+          autocomplete="off"
+          name="minMark"
+          type="number"
+          required
+          #minMark="ngModel"
+        />
+    </div>
+    <div *ngIf="minMark.dirty && minMark.invalid">
+      <small class="error-info" *ngIf="minMark.errors?.['required']">* Min mark is required</small>
+    </div>
+    <div class="flex justify-end gap-2">
+        <p-button label="Cancel" severity="secondary" (click)="closeDialog()" />
+        <p-button label="Save" [disabled]="editForm.invalid || !editForm.dirty" (click)="createSubject()" />
+    </div>
+  </p-dialog>
+</form>

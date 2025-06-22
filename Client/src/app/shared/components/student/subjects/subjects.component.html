@@ -1,0 +1,28 @@
+<div class="doctors fadeInDown">
+  <div class="doc-head">
+    <h2>My Courses</h2>
+  </div>
+  <div class="table">
+      <table class="animated fadeInDown">
+          <thead>
+              <th>Name</th>
+              <th>Min Mark</th>
+              <th>My Mark</th>
+          </thead>
+          <tbody class="tbody">
+            @if (subjects.length === 0) {
+              <tr>
+                <td colspan="3">No content</td>
+              </tr>
+            }
+            @for (subject of subjects; track $index) {
+              <tr>
+                <td>{{subject.subjectName}}</td>
+                <td>{{subject.minMark}}</td>
+                <td>{{subject.gainedMark ? subject.gainedMark : 'No mark'}}</td>
+              </tr>
+            }
+          </tbody>
+      </table>
+  </div>
+</div>

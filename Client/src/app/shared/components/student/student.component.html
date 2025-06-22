@@ -1,0 +1,43 @@
+<div class="defaultLayout">
+  <div class="upperBar">
+      <div class="holder">
+          <span class="icon" id="icon" (click)="handleIconClick()">
+            <i class="fa-solid fa-bars"></i>
+          </span>
+          <span class="settingsHolder">
+              <h4>Welcome {{accountService.currentUser()?.userName}}</h4>
+              <img class="header-img" src="{{accountService.currentUser()?.photoUrl}}" alt="">
+          </span>
+      </div>
+  </div>
+  <div class= "{{isAsideOpen ? 'aside closed' : 'aside'}}" id='aside'>
+      <ul>
+          <li id="header">
+            <span class="icon"><i class="fa-solid fa-school"></i></span>
+            <span class="title">School System</span>
+          </li>
+          <li routerLinkActive="selected">
+            <a routerLink="subjects" class="nav-link"><i class="fa-solid fa-book-open"></i>Subjects</a>
+          </li>
+          <li routerLinkActive="selected">
+            <a routerLink="messages" class="nav-link">
+              @if (messageCounter === 0) {
+                <i class="fa-solid fa-message"></i>Messages
+              }
+              @else {
+                <span class="counter">{{ messageCounter }}</span> Messages
+              }
+            </a>
+          </li>
+          <li routerLinkActive="selected">
+            <a routerLink="my-account" class="nav-link"><i class="fa-solid fa-gear"></i>My account</a>
+          </li>
+          <li>
+              <a (click)="logout()" class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+          </li>
+      </ul>
+  </div>
+  <div class="{{isPageContentOpen ? 'pageContent' : 'pageContent opened'}}" id="content">
+      <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+.gap-2 {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.gap-4 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.p-dialog-header {
+  padding-bottom: 10px;
+}
+
+span.mb-8 {
+  display: block;
+  margin-bottom: 40px;
+}
+
+.error-info {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 5px;
+  color: red;
+  margin-right: 10px;
+}
+
+.selection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#subjectDropdown {
+  padding: 8px;
+}

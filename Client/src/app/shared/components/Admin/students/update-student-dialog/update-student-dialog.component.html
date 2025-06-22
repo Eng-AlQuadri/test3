@@ -1,0 +1,46 @@
+<form #editForm="ngForm" *ngIf="student">
+  <p-dialog header="Create Student" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+    <span class="p-text-secondary block mb-8">Create Student Data</span>
+    <div class="flex items-center gap-4 mb-4">
+        <label for="username" class="font-semibold w-24">Username</label>
+        <input
+          [(ngModel)]="student.userName"
+          pInputText id="username"
+          class="flex-auto"
+          autocomplete="off"
+          name="userName"
+          required
+          minlength="3"
+          maxlength="15"
+          #userName="ngModel"
+        />
+    </div>
+    <div *ngIf="userName.dirty && userName.invalid">
+      <small class="error-info" *ngIf="userName.errors?.['required']">* Username is required</small>
+      <small class="error-info" *ngIf="userName.errors?.['minlength']">* Min length is 3 characters</small>
+      <small class="error-info" *ngIf="userName.errors?.['maxlength']">* Max length is 15 characters</small>
+    </div>
+    <div class="flex items-center gap-4 mb-8">
+        <label for="email" class="font-semibold w-24">Email</label>
+        <input
+          [(ngModel)]="student.email"
+          pInputText id="email"
+          class="flex-auto"
+          autocomplete="off"
+          name="email"
+          type="email"
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          #email="ngModel"
+        />
+    </div>
+    <div *ngIf="email.dirty && email.invalid">
+      <small class="error-info" *ngIf="email.errors?.['required']">* Email is required</small>
+      <small class="error-info" *ngIf="email.errors?.['pattern']">* Invalid email</small>
+    </div>
+    <div class="flex justify-end gap-2">
+        <p-button label="Cancel" severity="secondary" (click)="closeDialog()" />
+        <p-button label="Save" [disabled]="editForm.invalid || !editForm.dirty" (click)="updateStudent()" />
+    </div>
+  </p-dialog>
+</form>

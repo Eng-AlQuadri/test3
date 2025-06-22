@@ -1,0 +1,76 @@
+.table {
+  overflow-x: auto;
+}
+
+table {
+  margin: 20px auto;
+  box-shadow: 0 3px 10px #ccc;
+  text-align: center;
+  width: 100%;
+  /* max-width: 800px; */
+  border-collapse: collapse;
+
+}
+
+table td {
+  background-color: var(--secondary-color);
+  vertical-align: middle !important;
+}
+
+table thead {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+tr:nth-child(even) td {
+  background-color: #cecece;
+}
+
+td,
+th {
+  padding: 8px;
+}
+
+.options button {
+  margin: 5px;
+}
+
+.doc-head {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--primary-color);
+  flex-wrap: wrap;
+}
+
+.head-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.loading {
+  text-align: center;
+}
+
+
+.field {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.field input {
+  padding: 6px;
+  border: 1px solid var(--primary-color);
+  caret-color: var(--primary-color);
+  border-radius: 8px;
+  outline: none;
+  margin-left: 5px;
+}
+

@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-2" *ngFor="let photo of student?.photos">
+    <img src="{{photo.url}}" alt="{{photo.url}}" class="img-thumbnail p-1">
+    @if (!photo.isMain) {
+      <div class="text-center d-flex">
+        <button
+          (click)="setMainPhoto(photo)"
+          [ngClass]="photo.isMain ? 'btn-success active' : 'btn-outline-success'"
+          class="btn btn-sm"
+        >Main</button>
+        <button
+          (click)="deletePhoto(photo.id)"
+          class="btn btn-sm btn-danger"
+        ><i class="fa fa-trash"></i></button>
+      </div>
+    }
+  </div>
+</div>
+
+<p-fileupload
+    #fileUpload
+    name="file"
+    [customUpload]="true"
+    (uploadHandler)="onUpload($event, fileUpload)"
+    [multiple]="false"
+    accept="image/*"
+    maxFileSize="1000000"
+    mode="advanced"
+>
+    <ng-template #empty>
+        <div>Drag and drop files to here to upload.</div>
+    </ng-template>
+    <ng-template #content>
+        <ul *ngIf="uploadedFiles.length">
+            <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
+        </ul>
+    </ng-template>
+</p-fileupload>

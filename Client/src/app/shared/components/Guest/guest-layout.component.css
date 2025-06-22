@@ -1,0 +1,125 @@
+.signup-section {
+  height: 97vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-section form {
+  padding: 15px;
+  border-radius: 15px;
+  border: 2px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  max-width: 350px;
+  margin: 0 auto;
+  color: var(--primary-color);
+  box-shadow: 0 6px 10px var(--secondary-color);
+}
+
+.signup-section form h2 {
+  text-align: center;
+}
+
+.signup-section form .field {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.signup-section form .field input {
+  padding: 5px;
+  border: 1px solid var(--primary-color);
+  caret-color: var(--primary-color);
+  border-radius: 8px;
+  outline: none;
+}
+
+#choose-btn {
+  padding: 4px 8px;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  transition: 0.3s;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#choose-btn:hover {
+  color: var(--);
+  background-color: var(--primary-color);
+}
+
+#submit-btn {
+  padding: 6px 8px;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+#submit-btn:hover {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+#submit-btn:active {
+  scale: 0.9;
+}
+
+.question {
+  text-align: center;
+}
+
+.question span {
+  padding: 6px 8px;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.question span:hover {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+.serrors {
+  text-align: center;
+  display: none;
+}
+
+.serrors.show {
+  display: block;
+}
+
+.serrors h3 {
+  background-color: lightcoral;
+  padding: 8px;
+  border-radius: 8px;
+  color: var(--secondary-color);
+}
+
+.errors {
+  text-align: center;
+  display: none;
+}
+
+.errors.show {
+  display: block;
+}
+
+.errors h3 {
+  background-color: lightcoral;
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+}
+

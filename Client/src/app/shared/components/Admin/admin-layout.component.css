@@ -1,0 +1,221 @@
+Start Default Layout */
+.defaultLayout {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.defaultLayout .pageContent {
+  min-width: calc(100% - 230px);
+  min-height: calc(100% - 60px);
+  position: absolute;
+  left: 230px;
+  top: 60px;
+  transition: 0.3s;
+  z-index: 1;
+  padding: 15px;
+  overflow: auto;
+}
+
+.defaultLayout .pageContent.opened {
+  min-width: calc(100% - 55px);
+  left: 55px;
+}
+
+
+@media(max-width: 767px) {
+  .defaultLayout .pageContent {
+      width: 100%;
+      left: 0
+  }
+
+  .defaultLayout .pageContent.opened {
+      min-width: calc(100% - 85px);
+      left: 0;
+  }
+}
+
+.defaultLayout .aside {
+  /* max-width: 250px; */
+  width: 230px;
+  position: fixed;
+  height: calc(100% - 60px);
+  transition: 0.3s;
+  overflow: hidden;
+  top: 60px;
+  z-index: 6;
+}
+
+.defaultLayout .aside.closed {
+  width: 55px;
+}
+
+@media(max-width: 767px) {
+
+  .defaultLayout .aside.closed {
+      width: 0;
+  }
+}
+
+/* @media(max-width: 767px) {
+  .defaultLayout .aside {
+      overflow: hidden;
+      flex: 80px;
+      flex-basis: 80px;
+  }
+} */
+
+.defaultLayout .aside ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0 10px 10px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.defaultLayout .aside ul li {
+  position: relative;
+  padding: 0 !important;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 25px;
+  cursor: pointer;
+  color: var(--secondary-color);
+  transition: 0.1s;
+}
+
+.defaultLayout .aside ul li#header {
+  padding: 15px !important;
+}
+
+.defaultLayout .aside ul li a {
+  padding: 15px;
+}
+
+.defaultLayout .aside ul li:first-child {
+  border-bottom: 1px solid var(--secondary-color);
+  border-radius: 0%;
+  margin-bottom: 10px;
+}
+
+.defaultLayout .aside ul li:last-child {
+  margin-bottom: 30px;
+}
+
+.defaultLayout .aside ul li:not(:first-child):hover,
+.selected {
+  background-color: var(--secondary-color);
+  color: var(--primary-color) !important;
+}
+
+.defaultLayout .aside ul a {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}
+
+.defaultLayout .aside ul li:active {
+  scale: 0.9;
+}
+
+
+/* End Default Layout */
+
+
+/* Start UpperBar */
+.upperBar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 60px;
+  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+  background-color: #fff;
+  padding-left: 20px;
+  z-index: 6;
+}
+
+.upperBar .icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  border-radius: 50%;
+  /* border: 1px solid var(--primary-color); */
+  color: var(--primary-color);
+  transition: 0.1s;
+}
+
+.upperBar .icon:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.upperBar .icon:active {
+  scale: 0.9;
+}
+
+.upperBar .holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.upperBar .holder .settingsHolder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 15px;
+  z-index: 2;
+}
+
+.upperBar .holder .settingsHolder h4 {
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+
+
+.upperBar .holder .settingsHolder ul {
+  position: absolute;
+  top: 80px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 3;
+  display: none;
+}
+
+.upperBar .holder .settingsHolder ul li {
+  padding: 12px 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.upperBar .holder .settingsHolder ul li:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.upperBar .icon {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* End UpperBar */

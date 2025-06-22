@@ -1,0 +1,10 @@
+<div class="signup-section">
+  <div class="container">
+      <form class="login fadeInDown" (ngSubmit)="login()" [formGroup]="loginForm">
+          <h2>Login Into Your Account</h2>
+          <app-input-text label="Email" formControlName="email" type="email"></app-input-text>
+          <app-input-text label="Password" formControlName="password" type="password"></app-input-text>
+          <input type="submit" value='Login' id='submit-btn' name='login'>
+      </form>
+  </div>
+</div>
