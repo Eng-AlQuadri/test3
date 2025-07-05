@@ -12,6 +12,7 @@ import { errorInterceptor } from './core/interceptors/error.interceptor';
 import { jwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { loadingInterceptor } from './core/interceptors/loading.interceptor';
 import { InitService } from './core/services/init.service';
+import { languageInterceptor } from './core/interceptors/language.interceptor';
 
 
 function initializeApp(initService: InitService) {
@@ -33,7 +34,8 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([
       errorInterceptor,
       jwtInterceptor,
-      loadingInterceptor
+      loadingInterceptor,
+      languageInterceptor
     ])),
     importProvidersFrom(
       BrowserAnimationsModule,

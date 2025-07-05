@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NwMOWx8XgKw=",
+  "dgSpecHash": "4JhBlnWFDks=",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\Downloads\\School_System-main\\School_System-main\\Core\\Core.csproj",
+  "projectFilePath": "C:\\Users\\USER\\Desktop\\New folder\\test2\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -126,9 +126,9 @@
       "code": "NU1603",
       "level": "Warning",
       "message": "Core depends on Pomelo.EntityFrameworkCore.MySql (>= 9.0.0-preview.3) but Pomelo.EntityFrameworkCore.MySql 9.0.0-preview.3 was not found. Pomelo.EntityFrameworkCore.MySql 9.0.0-preview.3.efcore.9.0.0 was resolved instead.",
-      "projectPath": "C:\\Users\\USER\\Downloads\\School_System-main\\School_System-main\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\USER\\Desktop\\New folder\\test2\\Core\\Core.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\USER\\Downloads\\School_System-main\\School_System-main\\Core\\Core.csproj",
+      "filePath": "C:\\Users\\USER\\Desktop\\New folder\\test2\\Core\\Core.csproj",
       "libraryId": "Pomelo.EntityFrameworkCore.MySql",
       "targetGraphs": [
         "net9.0"

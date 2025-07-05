@@ -19,11 +19,19 @@ public static class ApplicationServiceExtensions
 
         services.AddScoped<IPhotoService, PhotoService>();
 
+        // services.AddMemoryCache();
+
+        services.AddScoped<ITranslationCache, TranslationCache>();
+
+        services.AddScoped<IJsonTranslationService, JsonTranslationService>();
+
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
         services.AddScoped<LogUserActivity>();
 
         services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
+
+        services.AddHttpContextAccessor();
 
         services.Configure<CloudinarySettings>(configuration.GetSection("CloudinarySettings"));
 

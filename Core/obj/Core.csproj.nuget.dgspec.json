@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Downloads\\School_System-main\\School_System-main\\Core\\Core.csproj": {}
+    "C:\\Users\\USER\\Desktop\\New folder\\test2\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Downloads\\School_System-main\\School_System-main\\Core\\Core.csproj": {
+    "C:\\Users\\USER\\Desktop\\New folder\\test2\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Downloads\\School_System-main\\School_System-main\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Desktop\\New folder\\test2\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\USER\\Downloads\\School_System-main\\School_System-main\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\USER\\Desktop\\New folder\\test2\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Downloads\\School_System-main\\School_System-main\\Core\\obj\\",
+        "outputPath": "C:\\Users\\USER\\Desktop\\New folder\\test2\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

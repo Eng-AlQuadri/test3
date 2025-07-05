@@ -43,7 +43,7 @@ using (var scope = app.Services.CreateScope())
         await context.Database.MigrateAsync();
         await Seeder.SeedUsers(userManager, roleManager, unitOfWork);
     }
-    catch (Exception ex) 
+    catch (Exception ex)
     {
         var logger = services.GetRequiredService<ILogger<Program>>();
 
@@ -51,18 +51,20 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-app.UseMiddleware<ExceptionMiddleware>();
-
-app.UseHttpsRedirection();
-
-app.UseRouting();
-
 app.UseCors(x => x
     .AllowAnyHeader()
     .AllowAnyMethod()
     .AllowCredentials()
     .WithOrigins("https://localhost:4200")
 );
+
+app.UseMiddleware<RequestLocalizationMiddleware>();
+
+app.UseMiddleware<ExceptionMiddleware>();
+
+app.UseHttpsRedirection();
+
+app.UseRouting();
 
 app.UseAuthentication();
 

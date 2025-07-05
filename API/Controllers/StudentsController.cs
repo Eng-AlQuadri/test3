@@ -4,6 +4,7 @@ using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -17,12 +18,15 @@ public class StudentsController : BaseApiController
     private readonly IUnitOfWork _unitOfWork;
     private readonly UserManager<AppUser> _userManager;
     private readonly IMapper _mapper;
+    private readonly IJsonTranslationService _translator;
 
-    public StudentsController(IUnitOfWork unitOfWork, IMapper mapper, UserManager<AppUser> userManager)
+    public StudentsController(IUnitOfWork unitOfWork, IMapper mapper,
+    UserManager<AppUser> userManager, IJsonTranslationService translator)
     {
         _unitOfWork = unitOfWork;
         _userManager = userManager;
         _mapper = mapper;
+        _translator = translator;
     }
 
 
@@ -117,7 +121,12 @@ public class StudentsController : BaseApiController
     [HttpPost]
     public async Task<ActionResult<StudentDto>> CreateStudent(CreateStudentDto createStudentDto)
     {
-        if (await UserExists(createStudentDto.Email)) return BadRequest("This email is used");
+        if (await UserExists(createStudentDto.Email))
+        {
+            var message = await _translator.Translate("StudentsController", "CreateStudent", "EmailUsed");
+
+            return BadRequest(message);
+        }    
 
         var user = _mapper.Map<AppUser>(createStudentDto);
 

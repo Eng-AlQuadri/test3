@@ -38,4 +38,12 @@ export class AdminLayoutComponent {
     this.accountService.logout();
     this.router.navigateByUrl('/login');
   }
+
+  ChangeToEnglish() {
+    localStorage.setItem('schoolNet.language', JSON.stringify('en'));
+  }
+
+  ChangeToArabic() {
+    localStorage.setItem('schoolNet.language', JSON.stringify('ar'));
+  }
 }
