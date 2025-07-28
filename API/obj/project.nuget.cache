@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3MP8yU0SMeo=",
+  "dgSpecHash": "vCv/+6mjgjw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\Desktop\\New folder\\test2\\api\\API.csproj",
+  "projectFilePath": "C:\\Users\\USER\\Desktop\\New folder\\test2\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -128,9 +128,9 @@
       "code": "NU1603",
       "level": "Warning",
       "message": "API depends on Pomelo.EntityFrameworkCore.MySql (>= 9.0.0-preview.3) but Pomelo.EntityFrameworkCore.MySql 9.0.0-preview.3 was not found. Pomelo.EntityFrameworkCore.MySql 9.0.0-preview.3.efcore.9.0.0 was resolved instead.",
-      "projectPath": "C:\\Users\\USER\\Desktop\\New folder\\test2\\api\\API.csproj",
+      "projectPath": "C:\\Users\\USER\\Desktop\\New folder\\test2\\API\\API.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\USER\\Desktop\\New folder\\test2\\api\\API.csproj",
+      "filePath": "C:\\Users\\USER\\Desktop\\New folder\\test2\\API\\API.csproj",
       "libraryId": "Pomelo.EntityFrameworkCore.MySql",
       "targetGraphs": [
         "net9.0"
